@@ -47,15 +47,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums.cs" />
-    <Compile Include="Navigator.cs" />
-    <Compile Include="Navigator_should_.cs" />
+    <Compile Include="Day12\InstructionExtensions.cs" />
+    <Compile Include="Day12\CopyInstruction.cs" />
+    <Compile Include="Day12\CopyInstruction_should_.cs" />
+    <Compile Include="Day12\DecrementInstruction.cs" />
+    <Compile Include="Day12\DecrementInstruction_should_.cs" />
+    <Compile Include="Day12\IncrementInstruction.cs" />
+    <Compile Include="Day12\IncrementInstruction_should_.cs" />
+    <Compile Include="Day12\Instruction.cs" />
+    <Compile Include="Day12\InstructionExecutor.cs" />
+    <Compile Include="Day12\InstructionExecutor_should_.cs" />
+    <Compile Include="Day12\InstructionFactory.cs" />
+    <Compile Include="Day12\InstructionFactory_should_.cs" />
+    <Compile Include="Day12\JumpInstruction.cs" />
+    <Compile Include="Day12\JumpInstruction_should_.cs" />
+    <Compile Include="Day12\Registers.cs" />
+    <Compile Include="Day12\Registers_should_.cs" />
+    <Compile Include="Day2\ModifiedKeypad.cs" />
+    <Compile Include="Day1\Enums.cs" />
+    <Compile Include="Day2\Keypad.cs" />
+    <Compile Include="Day2\Keypad_should_.cs" />
+    <Compile Include="LineByLine.cs" />
+    <Compile Include="Day2\ModifiedKeypad_should_.cs" />
+    <Compile Include="Day1\Navigator.cs" />
+    <Compile Include="Day1\Navigator_should_.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Day12\day12_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day2\day2_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdventOfCode
+namespace AdventOfCode.Day1
 {
     public class Navigator
     {
@@ -63,6 +63,7 @@ namespace AdventOfCode
                 if (_locationsVisited.Contains(CurrentPosition))
                 {
                     _anyLocationHasBeenVisitedTwice = true;
+                    break;
                 }
 
                 _locationsVisited.Add(CurrentPosition);

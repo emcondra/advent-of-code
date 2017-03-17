@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace AdventOfCode
+namespace AdventOfCode.Day1
 {
     public class Navigator_should_
     {
@@ -146,7 +146,7 @@ namespace AdventOfCode
 
             var expectedShortestPath = 1;
 
-            var listOfCommands = new List<string>() { "L2", "R1", "R1", "R1" };
+            var listOfCommands = new List<string>() { "L2", "R1", "R1", "R3" };
 
             var actualShortestPath = navigator.CalculateShortestPathToFirstLocationVisitedTwice(listOfCommands);
 
