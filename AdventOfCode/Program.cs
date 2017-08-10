@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using AdventOfCode.Day1;
+using AdventOfCode.Day11;
 using AdventOfCode.Day12;
 using AdventOfCode.Day2;
+using AdventOfCode.Day3;
 
 namespace AdventOfCode
 {
@@ -15,9 +17,41 @@ namespace AdventOfCode
 
             //Day2();
 
-            Day12();
+            //Day3();
+
+            //Day12();
+
+            Day11();
 
             Console.ReadLine();
+        }
+
+        private static void Day11()
+        {
+            var currentState = new BuildingState(new List<char> {'P', 'T', 'Z', 'R', 'C', 'E', 'D'});
+            currentState.ElevatorLocation = 0;
+            currentState.SetChipLocation('P', 1);
+            currentState.SetGeneratorLocation('P', 0);
+            currentState.SetChipLocation('T', 0);
+            currentState.SetGeneratorLocation('T', 0);
+            currentState.SetChipLocation('Z', 1);
+            currentState.SetGeneratorLocation('Z', 0);
+            currentState.SetChipLocation('R', 0);
+            currentState.SetGeneratorLocation('R', 0);
+            currentState.SetChipLocation('C', 0);
+            currentState.SetGeneratorLocation('C', 0);
+            currentState.SetChipLocation('E', 0);
+            currentState.SetGeneratorLocation('E', 0);
+            currentState.SetChipLocation('D', 0);
+            currentState.SetGeneratorLocation('D', 0);
+
+            var stateTraverser = new StateTraverser();
+
+            var goalState = BuildingState.CreateGoalState(currentState);
+
+            var stepsToGoalState = stateTraverser.GetStepsToGoalState(currentState, goalState);
+
+            Console.WriteLine("Steps: " + stepsToGoalState);
         }
 
         private static void Day12()
@@ -47,6 +81,52 @@ namespace AdventOfCode
 
             var shortestPathToFirstLocationVisitedTwice = CalculateShortestPathToFirstLocationVisitedTwice(values);
             Console.WriteLine("Shortest path to first location visited twice = " + shortestPathToFirstLocationVisitedTwice);
+        }
+
+        private static void Day3()
+        {
+            var lines = LineByLine.GetLines("Day3/day3_input.txt").ToList();
+            var count = lines.Count();
+
+            //Part1(count, lines);
+
+            var triangles = Part2(count, lines);
+
+            Console.WriteLine("Valid triangles = " + triangles.Count(t => t.IsValid()));
+        }
+
+        private static Triangle[] Part1(int count, List<string> lines)
+        {
+            var triangles = new Triangle[count];
+
+            for (var i = 0; i < count; i++)
+            {
+                var splitLine = lines[i].Split((char[]) null, StringSplitOptions.RemoveEmptyEntries);
+                var coordinates = splitLine.Select(coord => int.Parse(coord)).ToArray();
+                var triangle = new Triangle(coordinates);
+                triangles[i] = triangle;
+            }
+
+            return triangles;
+        }
+
+        private static Triangle[] Part2(int count, List<string> lines)
+        {
+            var triangles = new Triangle[count];
+
+            for (var i = 0; i < count; i+=3)
+            {
+
+                var line1 = lines[i];
+                var line1Values = lines[i].Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+
+                var splitLine = lines[i].Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+                var coordinates = splitLine.Select(coord => int.Parse(coord)).ToArray();
+                var triangle = new Triangle(coordinates);
+                triangles[i] = triangle;
+            }
+
+            return triangles; 
         }
 
         public static int CalculateShortestPath(List<string> values)

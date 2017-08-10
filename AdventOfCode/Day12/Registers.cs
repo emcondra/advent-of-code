@@ -11,7 +11,6 @@ namespace AdventOfCode.Day12
             get
             {
                 return _registerValues.ContainsKey(index) ? _registerValues[index] : 0;
-
             }
             set
             {

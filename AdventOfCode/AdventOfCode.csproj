@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Any.cs" />
+    <Compile Include="Day11\BuildingState.cs" />
+    <Compile Include="Day11\BuildingState_should_.cs" />
+    <Compile Include="Day11\StateTraverser.cs" />
+    <Compile Include="Day11\StateTraverser_should_.cs" />
     <Compile Include="Day12\InstructionExtensions.cs" />
     <Compile Include="Day12\CopyInstruction.cs" />
     <Compile Include="Day12\CopyInstruction_should_.cs" />
@@ -67,6 +72,8 @@
     <Compile Include="Day1\Enums.cs" />
     <Compile Include="Day2\Keypad.cs" />
     <Compile Include="Day2\Keypad_should_.cs" />
+    <Compile Include="Day3\Triangle.cs" />
+    <Compile Include="Day3\Triangle_should_.cs" />
     <Compile Include="LineByLine.cs" />
     <Compile Include="Day2\ModifiedKeypad_should_.cs" />
     <Compile Include="Day1\Navigator.cs" />
@@ -82,6 +89,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Day2\day2_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day3\day3_input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
